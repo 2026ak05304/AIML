@@ -1,0 +1,736 @@
+{
+  "user_id": "2026ak05304",
+  "dataset": {
+    "name": "Dry Bean Dataset",
+    "source": "UCI Machine Learning Repository, id 602",
+    "citation": "Koklu, M. and Ozkan, I. A. (2020). Multiclass classification of dry beans using computer vision and machine learning techniques. Computers and Electronics in Agriculture, 174, 105507.",
+    "rows": 13611,
+    "feature_count": 16,
+    "class_counts": {
+      "DERMASON": 3546,
+      "SIRA": 2636,
+      "SEKER": 2027,
+      "HOROZ": 1928,
+      "CALI": 1630,
+      "BARBUNYA": 1322,
+      "BOMBAY": 522
+    },
+    "class_profiles": {
+      "BARBUNYA": {
+        "Area": 69804.13313161876,
+        "AspectRation": 1.5443946670496036,
+        "Compactness": 0.805000822520262,
+        "roundness": 0.8002004418454222
+      },
+      "BOMBAY": {
+        "Area": 173485.05938697318,
+        "AspectRation": 1.5855499596639737,
+        "Compactness": 0.792621561675076,
+        "roundness": 0.864420869342368
+      },
+      "CALI": {
+        "Area": 75538.21104294478,
+        "AspectRation": 1.7336630325799487,
+        "Compactness": 0.7567030791062894,
+        "roundness": 0.8459344254867103
+      },
+      "DERMASON": {
+        "Area": 32118.710941906375,
+        "AspectRation": 1.4904709242245318,
+        "Compactness": 0.8191100392294607,
+        "roundness": 0.9081138509818065
+      },
+      "HOROZ": {
+        "Area": 53648.508817427384,
+        "AspectRation": 2.0261190977596253,
+        "Compactness": 0.7008804579013767,
+        "roundness": 0.7944200608811437
+      },
+      "SEKER": {
+        "Area": 39881.299950666005,
+        "AspectRation": 1.2451818768347025,
+        "Compactness": 0.8968410301663592,
+        "roundness": 0.9445076261004784
+      },
+      "SIRA": {
+        "Area": 44729.12860394537,
+        "AspectRation": 1.570082633684349,
+        "Compactness": 0.7973446594676751,
+        "roundness": 0.884651996752819
+      }
+    },
+    "strongest_correlations": [
+      {
+        "feature_a": "Area",
+        "feature_b": "ConvexArea",
+        "abs_correlation": 0.9999392261797566
+      },
+      {
+        "feature_a": "Compactness",
+        "feature_b": "ShapeFactor3",
+        "abs_correlation": 0.9986858130284293
+      },
+      {
+        "feature_a": "Perimeter",
+        "feature_b": "EquivDiameter",
+        "abs_correlation": 0.9913804295980644
+      },
+      {
+        "feature_a": "AspectRation",
+        "feature_b": "Compactness",
+        "abs_correlation": 0.9876872990527672
+      },
+      {
+        "feature_a": "ConvexArea",
+        "feature_b": "EquivDiameter",
+        "abs_correlation": 0.9852262521812035
+      },
+      {
+        "feature_a": "Area",
+        "feature_b": "EquivDiameter",
+        "abs_correlation": 0.9849675237714004
+      }
+    ]
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratified": true,
+    "train_rows": 10888,
+    "test_rows": 2723
+  },
+  "metric_definition": {
+    "precision_recall_f1": "macro",
+    "auc": "macro one-vs-rest",
+    "svm_auc_scores": "decision_function",
+    "other_auc_scores": "predict_proba",
+    "winner_rule": "highest holdout MCC, then higher macro F1"
+  },
+  "hyperparameters": {
+    "logistic_regression": {
+      "C": 0.1,
+      "max_iter": 2000,
+      "class_weight": "balanced",
+      "cv_macro_f1": [
+        {
+          "value": 0.1,
+          "mean_macro_f1": 0.93412753526095,
+          "std": 0.003717236787631868
+        },
+        {
+          "value": 1.0,
+          "mean_macro_f1": 0.9331911652198206,
+          "std": 0.003602266068856641
+        },
+        {
+          "value": 10.0,
+          "mean_macro_f1": 0.9338078407214085,
+          "std": 0.0036457671091280897
+        }
+      ]
+    },
+    "decision_tree": {
+      "max_depth": 10,
+      "min_samples_leaf": 5,
+      "class_weight": "balanced",
+      "cv_macro_f1": [
+        {
+          "value": 6,
+          "mean_macro_f1": 0.9078928640909734,
+          "std": 0.0045530345697854645
+        },
+        {
+          "value": 10,
+          "mean_macro_f1": 0.9192849246404258,
+          "std": 0.004438437706009232
+        },
+        {
+          "value": 14,
+          "mean_macro_f1": 0.9163430317843808,
+          "std": 0.0034108615162671586
+        },
+        {
+          "value": 20,
+          "mean_macro_f1": 0.9173660445879734,
+          "std": 0.005199801081136026
+        },
+        {
+          "value": null,
+          "mean_macro_f1": 0.9171968910046722,
+          "std": 0.005213850493235843
+        }
+      ]
+    },
+    "knn": {
+      "n_neighbors": 11,
+      "weights": "distance",
+      "metric": "euclidean",
+      "cv_macro_f1": [
+        {
+          "value": 3,
+          "mean_macro_f1": 0.9327491097946355,
+          "std": 0.0037455207289835376
+        },
+        {
+          "value": 5,
+          "mean_macro_f1": 0.9365665045765308,
+          "std": 0.004576536332213041
+        },
+        {
+          "value": 7,
+          "mean_macro_f1": 0.9371475734844648,
+          "std": 0.0032742432225599744
+        },
+        {
+          "value": 11,
+          "mean_macro_f1": 0.9375769852116532,
+          "std": 0.005950627955736288
+        },
+        {
+          "value": 15,
+          "mean_macro_f1": 0.9365989876262757,
+          "std": 0.005137147822585694
+        }
+      ]
+    },
+    "naive_bayes": {
+      "model": "GaussianNB",
+      "defaults": true
+    },
+    "support_vector_machine": {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale",
+      "class_weight": "balanced",
+      "probability": false,
+      "selection": "fixed before looking at the test set"
+    },
+    "preprocessing": "StandardScaler fit on the training fold only"
+  },
+  "metrics": {
+    "Logistic Regression": {
+      "Accuracy": 0.9162688211531399,
+      "Precision": 0.9303323028280271,
+      "Recall": 0.9306571123742169,
+      "F1": 0.9300379680932822,
+      "MCC": 0.8992248882391567,
+      "AUC": 0.9944162007915935
+    },
+    "Decision Tree": {
+      "Accuracy": 0.8986412045538009,
+      "Precision": 0.9100406100736522,
+      "Recall": 0.9123339776732889,
+      "F1": 0.9110073274578474,
+      "MCC": 0.8777618657751015,
+      "AUC": 0.974563382756882
+    },
+    "KNN": {
+      "Accuracy": 0.9184722732280572,
+      "Precision": 0.9343326615678622,
+      "Recall": 0.9292659926666585,
+      "F1": 0.9314512072642166,
+      "MCC": 0.9014371716874652,
+      "AUC": 0.9879014201305724
+    },
+    "Naive Bayes": {
+      "Accuracy": 0.8979067205288285,
+      "Precision": 0.9112374978297467,
+      "Recall": 0.9092384546214823,
+      "F1": 0.9091099074457399,
+      "MCC": 0.8772632840842779,
+      "AUC": 0.9916140133662351
+    },
+    "Support Vector Machine": {
+      "Accuracy": 0.9247153874403232,
+      "Precision": 0.9357352277680059,
+      "Recall": 0.9371836528141904,
+      "F1": 0.9362523243354596,
+      "MCC": 0.9092418905880155,
+      "AUC": 0.9914037684160519
+    }
+  },
+  "classification_reports": {
+    "Logistic Regression": {
+      "BARBUNYA": {
+        "precision": 0.9407114624505929,
+        "recall": 0.8981132075471698,
+        "f1-score": 0.918918918918919,
+        "support": 265.0
+      },
+      "BOMBAY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 104.0
+      },
+      "CALI": {
+        "precision": 0.924924924924925,
+        "recall": 0.9447852760736196,
+        "f1-score": 0.9347496206373292,
+        "support": 326.0
+      },
+      "DERMASON": {
+        "precision": 0.9380664652567976,
+        "recall": 0.8758815232722144,
+        "f1-score": 0.9059080962800875,
+        "support": 709.0
+      },
+      "HOROZ": {
+        "precision": 0.95822454308094,
+        "recall": 0.9507772020725389,
+        "f1-score": 0.9544863459037711,
+        "support": 386.0
+      },
+      "SEKER": {
+        "precision": 0.9258373205741627,
+        "recall": 0.9532019704433498,
+        "f1-score": 0.9393203883495146,
+        "support": 406.0
+      },
+      "SIRA": {
+        "precision": 0.8245614035087719,
+        "recall": 0.8918406072106262,
+        "f1-score": 0.8568824065633546,
+        "support": 527.0
+      },
+      "accuracy": 0.9162688211531399,
+      "macro avg": {
+        "precision": 0.9303323028280271,
+        "recall": 0.9306571123742169,
+        "f1-score": 0.9300379680932822,
+        "support": 2723.0
+      },
+      "weighted avg": {
+        "precision": 0.9181827662039946,
+        "recall": 0.9162688211531399,
+        "f1-score": 0.9166006483846904,
+        "support": 2723.0
+      }
+    },
+    "Decision Tree": {
+      "BARBUNYA": {
+        "precision": 0.8702290076335878,
+        "recall": 0.8603773584905661,
+        "f1-score": 0.8652751423149905,
+        "support": 265.0
+      },
+      "BOMBAY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 104.0
+      },
+      "CALI": {
+        "precision": 0.9021406727828746,
+        "recall": 0.9049079754601227,
+        "f1-score": 0.9035222052067381,
+        "support": 326.0
+      },
+      "DERMASON": {
+        "precision": 0.9227340267459139,
+        "recall": 0.8758815232722144,
+        "f1-score": 0.8986975397973951,
+        "support": 709.0
+      },
+      "HOROZ": {
+        "precision": 0.9381443298969072,
+        "recall": 0.9430051813471503,
+        "f1-score": 0.9405684754521964,
+        "support": 386.0
+      },
+      "SEKER": {
+        "precision": 0.918854415274463,
+        "recall": 0.9482758620689655,
+        "f1-score": 0.9333333333333333,
+        "support": 406.0
+      },
+      "SIRA": {
+        "precision": 0.8181818181818182,
+        "recall": 0.8538899430740038,
+        "f1-score": 0.8356545961002786,
+        "support": 527.0
+      },
+      "accuracy": 0.8986412045538009,
+      "macro avg": {
+        "precision": 0.9100406100736522,
+        "recall": 0.9123339776732889,
+        "f1-score": 0.9110073274578474,
+        "support": 2723.0
+      },
+      "weighted avg": {
+        "precision": 0.8994812315227422,
+        "recall": 0.8986412045538009,
+        "f1-score": 0.8987901007454829,
+        "support": 2723.0
+      }
+    },
+    "KNN": {
+      "BARBUNYA": {
+        "precision": 0.9626556016597511,
+        "recall": 0.8754716981132076,
+        "f1-score": 0.9169960474308301,
+        "support": 265.0
+      },
+      "BOMBAY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 104.0
+      },
+      "CALI": {
+        "precision": 0.9226190476190477,
+        "recall": 0.950920245398773,
+        "f1-score": 0.9365558912386707,
+        "support": 326.0
+      },
+      "DERMASON": {
+        "precision": 0.9096045197740112,
+        "recall": 0.9083215796897038,
+        "f1-score": 0.9089625970359916,
+        "support": 709.0
+      },
+      "HOROZ": {
+        "precision": 0.9558441558441558,
+        "recall": 0.9533678756476683,
+        "f1-score": 0.9546044098573282,
+        "support": 386.0
+      },
+      "SEKER": {
+        "precision": 0.9411764705882353,
+        "recall": 0.9458128078817734,
+        "f1-score": 0.9434889434889435,
+        "support": 406.0
+      },
+      "SIRA": {
+        "precision": 0.8484288354898336,
+        "recall": 0.8709677419354839,
+        "f1-score": 0.8595505617977528,
+        "support": 527.0
+      },
+      "accuracy": 0.9184722732280572,
+      "macro avg": {
+        "precision": 0.9343326615678622,
+        "recall": 0.9292659926666585,
+        "f1-score": 0.9314512072642166,
+        "support": 2723.0
+      },
+      "weighted avg": {
+        "precision": 0.9192003804631758,
+        "recall": 0.9184722732280572,
+        "f1-score": 0.9185797332869446,
+        "support": 2723.0
+      }
+    },
+    "Naive Bayes": {
+      "BARBUNYA": {
+        "precision": 0.9017094017094017,
+        "recall": 0.7962264150943397,
+        "f1-score": 0.845691382765531,
+        "support": 265.0
+      },
+      "BOMBAY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 104.0
+      },
+      "CALI": {
+        "precision": 0.8624641833810889,
+        "recall": 0.9233128834355828,
+        "f1-score": 0.8918518518518519,
+        "support": 326.0
+      },
+      "DERMASON": {
+        "precision": 0.9327217125382263,
+        "recall": 0.8603667136812412,
+        "f1-score": 0.8950843727072634,
+        "support": 709.0
+      },
+      "HOROZ": {
+        "precision": 0.9533678756476683,
+        "recall": 0.9533678756476683,
+        "f1-score": 0.9533678756476683,
+        "support": 386.0
+      },
+      "SEKER": {
+        "precision": 0.9228915662650602,
+        "recall": 0.9433497536945813,
+        "f1-score": 0.9330085261875761,
+        "support": 406.0
+      },
+      "SIRA": {
+        "precision": 0.8055077452667814,
+        "recall": 0.888045540796964,
+        "f1-score": 0.8447653429602888,
+        "support": 527.0
+      },
+      "accuracy": 0.8979067205288285,
+      "macro avg": {
+        "precision": 0.9112374978297467,
+        "recall": 0.9092384546214823,
+        "f1-score": 0.9091099074457399,
+        "support": 2723.0
+      },
+      "weighted avg": {
+        "precision": 0.9007023749849569,
+        "recall": 0.8979067205288285,
+        "f1-score": 0.8980754820999807,
+        "support": 2723.0
+      }
+    },
+    "Support Vector Machine": {
+      "BARBUNYA": {
+        "precision": 0.9307692307692308,
+        "recall": 0.9132075471698113,
+        "f1-score": 0.9219047619047619,
+        "support": 265.0
+      },
+      "BOMBAY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 104.0
+      },
+      "CALI": {
+        "precision": 0.9386503067484663,
+        "recall": 0.9386503067484663,
+        "f1-score": 0.9386503067484663,
+        "support": 326.0
+      },
+      "DERMASON": {
+        "precision": 0.9406528189910979,
+        "recall": 0.8942172073342737,
+        "f1-score": 0.9168474331164136,
+        "support": 709.0
+      },
+      "HOROZ": {
+        "precision": 0.9585492227979274,
+        "recall": 0.9585492227979274,
+        "f1-score": 0.9585492227979274,
+        "support": 386.0
+      },
+      "SEKER": {
+        "precision": 0.9261904761904762,
+        "recall": 0.958128078817734,
+        "f1-score": 0.9418886198547215,
+        "support": 406.0
+      },
+      "SIRA": {
+        "precision": 0.8553345388788427,
+        "recall": 0.8975332068311196,
+        "f1-score": 0.8759259259259259,
+        "support": 527.0
+      },
+      "accuracy": 0.9247153874403232,
+      "macro avg": {
+        "precision": 0.9357352277680059,
+        "recall": 0.9371836528141904,
+        "f1-score": 0.9362523243354596,
+        "support": 2723.0
+      },
+      "weighted avg": {
+        "precision": 0.9255862394935799,
+        "recall": 0.9247153874403232,
+        "f1-score": 0.9248510226251484,
+        "support": 2723.0
+      }
+    }
+  },
+  "top_confusions": {
+    "Logistic Regression": [
+      {
+        "count": 73,
+        "actual": "DERMASON",
+        "predicted": "SIRA"
+      },
+      {
+        "count": 31,
+        "actual": "SIRA",
+        "predicted": "DERMASON"
+      },
+      {
+        "count": 17,
+        "actual": "BARBUNYA",
+        "predicted": "CALI"
+      },
+      {
+        "count": 15,
+        "actual": "DERMASON",
+        "predicted": "SEKER"
+      }
+    ],
+    "Decision Tree": [
+      {
+        "count": 66,
+        "actual": "DERMASON",
+        "predicted": "SIRA"
+      },
+      {
+        "count": 42,
+        "actual": "SIRA",
+        "predicted": "DERMASON"
+      },
+      {
+        "count": 27,
+        "actual": "BARBUNYA",
+        "predicted": "CALI"
+      },
+      {
+        "count": 21,
+        "actual": "CALI",
+        "predicted": "BARBUNYA"
+      }
+    ],
+    "KNN": [
+      {
+        "count": 52,
+        "actual": "SIRA",
+        "predicted": "DERMASON"
+      },
+      {
+        "count": 51,
+        "actual": "DERMASON",
+        "predicted": "SIRA"
+      },
+      {
+        "count": 21,
+        "actual": "BARBUNYA",
+        "predicted": "CALI"
+      },
+      {
+        "count": 14,
+        "actual": "DERMASON",
+        "predicted": "SEKER"
+      }
+    ],
+    "Naive Bayes": [
+      {
+        "count": 78,
+        "actual": "DERMASON",
+        "predicted": "SIRA"
+      },
+      {
+        "count": 40,
+        "actual": "BARBUNYA",
+        "predicted": "CALI"
+      },
+      {
+        "count": 34,
+        "actual": "SIRA",
+        "predicted": "DERMASON"
+      },
+      {
+        "count": 21,
+        "actual": "DERMASON",
+        "predicted": "SEKER"
+      }
+    ],
+    "Support Vector Machine": [
+      {
+        "count": 58,
+        "actual": "DERMASON",
+        "predicted": "SIRA"
+      },
+      {
+        "count": 31,
+        "actual": "SIRA",
+        "predicted": "DERMASON"
+      },
+      {
+        "count": 17,
+        "actual": "DERMASON",
+        "predicted": "SEKER"
+      },
+      {
+        "count": 15,
+        "actual": "BARBUNYA",
+        "predicted": "CALI"
+      }
+    ]
+  },
+  "tree_feature_importance": [
+    {
+      "feature": "MinorAxisLength",
+      "importance": 0.18517317147985543
+    },
+    {
+      "feature": "ShapeFactor1",
+      "importance": 0.1644134437797439
+    },
+    {
+      "feature": "MajorAxisLength",
+      "importance": 0.15739494979281377
+    },
+    {
+      "feature": "ShapeFactor3",
+      "importance": 0.14521151141798386
+    },
+    {
+      "feature": "Perimeter",
+      "importance": 0.11954370456786645
+    },
+    {
+      "feature": "Compactness",
+      "importance": 0.10188495381738118
+    },
+    {
+      "feature": "roundness",
+      "importance": 0.07762728548581072
+    },
+    {
+      "feature": "ShapeFactor4",
+      "importance": 0.016499243042085474
+    },
+    {
+      "feature": "ShapeFactor2",
+      "importance": 0.012412519943281712
+    },
+    {
+      "feature": "Solidity",
+      "importance": 0.009887854189961534
+    },
+    {
+      "feature": "Extent",
+      "importance": 0.00285054821614752
+    },
+    {
+      "feature": "AspectRation",
+      "importance": 0.002632211771150945
+    },
+    {
+      "feature": "Eccentricity",
+      "importance": 0.0022481783372593836
+    },
+    {
+      "feature": "EquivDiameter",
+      "importance": 0.0011464611495457927
+    },
+    {
+      "feature": "ConvexArea",
+      "importance": 0.0007121933054480289
+    },
+    {
+      "feature": "Area",
+      "importance": 0.00036176970366431525
+    }
+  ],
+  "winner": "Support Vector Machine",
+  "feature_columns": [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRation",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4"
+  ]
+}
