@@ -276,7 +276,8 @@ def main():
         frame = pd.read_csv(upload)
         source_name = upload.name
         st.success(
-            f"Scoring {source_name}. The uploaded rows are not used to fit or update the models."
+            f"Loaded {source_name}. The metrics below come from the saved models. "
+            "Uploading a file does not retrain them."
         )
 
     try:
