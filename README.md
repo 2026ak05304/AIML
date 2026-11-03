@@ -39,7 +39,7 @@ The split is stratified, 80/20, `random_state` 42. That gives 10,888 training gr
 Replace the two placeholders after the repository is pushed and the app is deployed.
 
 - GitHub repository: `https://github.com/2026ak05304/AIML.git`
-- Live Streamlit app: `https://YOUR-APP.streamlit.app`
+- Live Streamlit app: `https://2026ak05304-ml.streamlit.app/`
 
 The repository contains:
 
